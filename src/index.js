@@ -1,6 +1,6 @@
 import avatar from './avatar.jpg'
 //var avatar = require('./avatar.jpg')
-import './index.css'
+import './index.scss'
 
 var img = new Image();
 img.src = avatar
