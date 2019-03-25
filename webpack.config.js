@@ -11,11 +11,14 @@ module.exports = {
     },
     module: {
         rules:[{
-            test: /\.jpg$/,
+            test: /\.(jpg|png|gif)$/,
             use: {
                 loader: 'file-loader',
                 options: {
-                    name: '[name].[ext]'  // 名字不变
+                    // placeholder 站位符
+                    //name: '[name].[ext]'  // 名字不变
+                    name: '[name]_[hash].[ext]',
+                    outputPath: 'images/'
                 }
             }
         }]
