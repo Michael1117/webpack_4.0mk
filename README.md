@@ -84,3 +84,5 @@ npx webpack index.js
 plugin可以在webpack运行到某个时刻的时候 ，帮你做一些事情
 
 ### clean-webpack-plugin 打包之前运行 html-webpack-plugin 打包之后运行
+
+### 使用Loader打包静态资源(图片)
