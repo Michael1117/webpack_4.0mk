@@ -6,4 +6,5 @@ function Header() {
 
 }
 
-export default Header
+//export default Header
+module.exports = Header;

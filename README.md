@@ -13,7 +13,16 @@ webpack
 -2. 文件和文件之间的层级关系一目了然，都在index.js中可见
 -3. 不会出现引入顺序不同导致的出错，因为首先加载了依赖的文件
 
-## ES module 浏览器不支持  chrome 73
+## ES module 浏览器默认不支持  chrome 73
 
 
 ## npx webpack index.js  用webpack翻译index.js
+
+## webpack是一个模块打包工具
+
+-1. ES Module 模块引入方式
+-2. CommonJS 模块引入规范
+-3. CMD 
+-4. AMD
+
+

@@ -5,4 +5,6 @@ function Sidebar() {
     dom.append(sidebar)
 }
 
-export default Sidebar
+//export default Sidebar
+
+module.exports = Sidebar
