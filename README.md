@@ -58,3 +58,17 @@ npx webpack index.js
 
 
 ### 当使用一个url-loader打包一个图片是，并不会像file-loader一样生成一个单独的图片，而是以base64的格式打包到bundle.js中， url-loader需要自己安装。
+
+### 
+```javascript
+  {
+      loader: 'css-loader',
+      options: {
+                importLoaders: 2,
+                modules: true
+                }
+    },
+
+```
+
+好处：模块里的样式不会互相冲突。
