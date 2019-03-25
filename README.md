@@ -40,3 +40,18 @@ webpack
 ### npm i webpack@4.16.5 -D
 
 ### npx webpack
+
+### npm run build
+
+### global 全局命令
+
+webpack index.js
+
+### local 本地命令
+
+npx webpack index.js
+
+配置package.json 里的scripts
+  "build": "webpack"
+
+然后npm run build
