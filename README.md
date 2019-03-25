@@ -9,9 +9,9 @@ webpack
 
 ##改进后
 
-###-1. index.html 中只引入一个index.js了，减少了http请求次数
-###-2. 文件和文件之间的层级关系一目了然，都在index.js中可见
-###-3. 不会出现引入顺序不同导致的出错，因为首先加载了依赖的文件
+### 1. index.html 中只引入一个index.js了，减少了http请求次数
+### 2. 文件和文件之间的层级关系一目了然，都在index.js中可见
+### 3. 不会出现引入顺序不同导致的出错，因为首先加载了依赖的文件
 
 ## ES module 浏览器默认不支持  chrome 73
 
@@ -20,10 +20,10 @@ webpack
 
 ## webpack是一个模块打包工具
 
-###-1. ES Module 模块引入方式
-###-2. CommonJS 模块引入规范
-###-3. CMD 
-###-4. AMD
+### 1. ES Module 模块引入方式
+### 2. CommonJS 模块引入规范
+### 3. CMD 
+### 4. AMD
 
 ## 最早的时候webpack是一个JavaScript打包工具  -> 现在能够打包任何形式的文件
 
