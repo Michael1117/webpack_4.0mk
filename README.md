@@ -85,4 +85,19 @@ plugin可以在webpack运行到某个时刻的时候 ，帮你做一些事情
 
 ### clean-webpack-plugin 打包之前运行 html-webpack-plugin 打包之后运行
 
-### 使用Loader打包静态资源(图片)
+### SourceMap配置
+
+现在知道dist目录下main.js文件96行出错
+
+sourceMap本质上是一个映射关系，它知道dist目录下mai.js文件96行实际对应的是src目录下index.js文件中的第一行
+
+当前其实是index.js中的第一行代码出错了
+
+### development 环境下
+source-map配置
+devtool: cheap-module-eval-source-map
+
+
+### production 环境下
+source-map配置
+devtool: cheap-module-source-map

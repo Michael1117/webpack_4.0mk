@@ -5,12 +5,11 @@ const webpack = require('webpack');
 
 module.exports = {
     mode: 'development',
+    devtool: 'inline-source-map',
     entry:{
-        main: './src/index.js',
-        sub: './src/index.js'
+        main: './src/index.js'
     },
     output: {
-        publicPath: 'http://cdn.com.cn',
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist')
     },
