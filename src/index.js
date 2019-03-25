@@ -1,16 +1,12 @@
-/* import Header from './header.js';
-import Sidebar from './sidebar.js';
-import Content from './content.js';
- */
+import avatar from './avatar.jpg'
+//var avatar = require('./avatar.jpg')
 
-var Header = require('./header')
-var Sidebar = require('./sidebar.js')
-var Content = require('./content.js')
+var img = new Image();
 
+img.src = avatar
 
+var root = document.getElementById('root');
 
-new Header();
-new Sidebar();
-new Content()
+root.append(img)
 
 

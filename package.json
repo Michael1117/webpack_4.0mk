@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Michael1117/webpack_4.0mk#readme",
   "devDependencies": {
+    "file-loader": "^3.0.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   }
