@@ -1,4 +1,7 @@
 const path = require('path')
+const HtmlWebapckPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const webpack = require('webpack');
 
 module.exports = {
     mode: 'development',
@@ -44,5 +47,14 @@ module.exports = {
             ]
         }
     ]
-    }
+    },
+    plugins: [
+        new HtmlWebapckPlugin({
+            template: 'src/index.html'
+        }),
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: ['dist'],
+        }),
+        new webpack.ProgressPlugin(),
+    ]
 }

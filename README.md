@@ -77,3 +77,10 @@ npx webpack index.js
 ### Asset Management Loading Data
 
 ### 使用plugins让打包更加便捷
+
+
+### htmlWebpackPlugin 会在打包结束后，自动生成一个html文件，并把打包生成的js自动引入到这个html文件中
+
+plugin可以在webpack运行到某个时刻的时候 ，帮你做一些事情
+
+### clean-webpack-plugin 打包之前运行 html-webpack-plugin 打包之后运行
