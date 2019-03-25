@@ -62,13 +62,18 @@ npx webpack index.js
 ### 
 ```javascript
   {
-      loader: 'css-loader',
-      options: {
-                importLoaders: 2,
-                modules: true
-                }
-    },
+    loader: 'css-loader',
+    options:{
+            importLoaders: 2,
+            modules: true
+    }
+  },
 
 ```
 
 好处：模块里的样式不会互相冲突。
+
+
+### Asset Management Loading Data
+
+### 使用plugins让打包更加便捷

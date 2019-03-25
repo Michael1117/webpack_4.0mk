@@ -24,14 +24,19 @@ module.exports = {
             }
         },
         {
+            test: /\.(eot|ttf|svg|woff)$/,
+            use: {
+                loader: 'file-loader'
+            }
+        },
+        {
             test: /\.scss$/,
             use: [
                 'style-loader',
                 {
                     loader: 'css-loader',
                     options: {
-                        importLoaders: 2,
-                        modules: true
+                        importLoaders: 2
                     }
                 },
                 'sass-loader',

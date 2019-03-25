@@ -1,17 +1,6 @@
-import avatar from './avatar.jpg'
-//var avatar = require('./avatar.jpg')
-import style from './index.scss'
-//import './index.scss'
-import createAvatar from './createAvatar'
-
-
-createAvatar()
-
-var img = new Image();
-img.src = avatar
-img.classList.add(style.avatar)
-
 var root = document.getElementById('root');
-root.append(img)
+import './index.scss';
+//root.append('<div class="test">abc</div>')
 
-
+//root.innerHTML = '<div class="iconfont iconhai_bao"></div>'
+root.innerHTML = '<div class="iconfont iconwo_de_gong_dan"></div>'
