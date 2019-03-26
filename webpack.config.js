@@ -21,15 +21,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,  // 如果js文件在node_modules里就不使用babel-loader，排除掉
-                loader: "babel-loader",
-                options: {
-                    "plugins": [["@babel/plugin-transform-runtime",{
-                        "corejs": 2,
-                        "helper": true,
-                        "regenerator": true,
-                        "useESModules": false
-                    }]]
-                }
+                loader: "babel-loader"
             },
             {
                 test: /\.(jpg|png|gif)$/,
