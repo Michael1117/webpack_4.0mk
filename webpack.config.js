@@ -23,11 +23,11 @@ module.exports = {
                 exclude: /node_modules/,  // 如果js文件在node_modules里就不使用babel-loader，排除掉
                 loader: "babel-loader",
                 options: {
-                    presets: [["@babel/preset-env",{
-                        targets:{
-                            chrome: "67"
-                        },
-                        useBuiltIns: 'usage'
+                    "plugins": [["@babel/plugin-transform-runtime",{
+                        "corejs": 2,
+                        "helper": true,
+                        "regenerator": true,
+                        "useESModules": false
                     }]]
                 }
             },

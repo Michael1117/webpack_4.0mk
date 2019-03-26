@@ -144,3 +144,34 @@ devtool: cheap-module-source-map
 ### 这样可以做到按需加载，用到哪个解析加载哪个
 
 ### npm i @babel/plugin-transform-runtime -D
+
+```javascript
+"plugins":[["@babel/plugin-transform-runtime",{
+              "corejs": 2,
+              "helper": true,
+              "regenerator": true,
+}]]
+```
+
+自己写业务代码的话只需要引入polyfill，提示配置好@babe/preset-env
+
+如果是写react/vue项目的话，需要配置@babel/plugin-transform-runtime
+
+
+polyfill会污染全局环境，@babel/plugin-transform-runtime会以闭包的形式注入或者是引入内容，不存在全局污染
+
+
+### npm i @babel/runtime-corejs2 --save
+
+或者直接创建.babelrc文件，在.babelrc里配置
+
+```javascript
+{
+  "plugins": [["@babel/plugin-transform-runtime",{
+      "corejs": 2,
+      "helper": true,
+      "regenerator": true,
+      "useESModules": false
+  }]]
+}
+```
