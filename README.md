@@ -249,3 +249,8 @@ Common.js是动态引入的方式
 ```javascript
 "sideEffects": ["@babel/polly-fill"],  // 只对 @babel/polly-fill 不进行Tree Shaking
 ```
+
+### 使用了Tree Shaking  main.js 中会多出 /*! exports used: add */
+
+/*! exports provided: add, minus */
+/*! exports used: add */
