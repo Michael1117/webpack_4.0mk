@@ -271,4 +271,40 @@ Common.js是动态引入的方式
 webpack中实现代码分割，两种方式
 
 1.同步代码： 只需要在webpack.common.js中做optimization的配置即可
-2.异步代码(import): 异步代码，无需做任何配置，会自动进行代码分割，放置到新的文件中 
+2.异步代码(import): 异步代码，无需做任何配置，会自动进行代码分割，放置到新的文件中
+
+### Plugin / SplitChunksPlugin
+
+###
+
+```javascript
+webpack.config.js
+
+module.exports = {
+  //...
+  optimization: {
+    splitChunks: {
+      chunks: 'async',  // 异步代码做代码分割
+      minSize: 30000,  //大于30000字节才做代码分割
+      maxSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      automaticNameDelimiter: '~',
+      name: true,
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true
+        }
+      }
+    }
+  }
+};
+
+```
