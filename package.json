@@ -1,6 +1,7 @@
 {
   "name": "webpack_4.0mk",
   "version": "1.0.0",
+  "sideEffects": false,
   "description": "webpack",
   "main": "index.js",
   "scripts": {

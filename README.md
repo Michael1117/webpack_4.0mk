@@ -234,3 +234,18 @@ polyfill会污染全局环境，@babel/plugin-transform-runtime会以闭包的�
 ```
 
 ### 配置React代码的打包
+
+### Tree Shaking 只支持 ES Module ，Common.js不支持
+Tree Shaking 只支持静态引入的方式
+Common.js是动态引入的方式
+
+### package.json
+```javascript
+"sideEffects": false,  // 所有的模块都不进行Tree Shaking
+```
+
+如果配置了Tree Shaking，webpack只要打包一个模块就会运用Tree Shaking来进行打包，例如引入了一个包，但是没有导出任何东西，Tree Shaking打包时会忽略掉，但实际上这个包是需要的，所以需要在package.json里来设置
+### package.json
+```javascript
+"sideEffects": ["@babel/polly-fill"],  // 只对 @babel/polly-fill 不进行Tree Shaking
+```
