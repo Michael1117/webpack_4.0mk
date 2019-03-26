@@ -121,3 +121,26 @@ devtool: cheap-module-source-map
 ### API 里的 Hot Module Replacement
 
 ### Concepts里的Hot Module Replacement实现原理
+
+
+## 使用Babel处理ES6语法
+
+### babel-loader 只是webpack和babel做通信的桥梁，webpack和babel连通了，但是并不会将ES6语法编译成ES5语法，这时候就需要借助@babel/preset-env
+
+### @babel/preset-env只做了部分语法转换，并不能让所有浏览器都支持，这时候需要安装@babel/polyfill
+
+运行npx webpack
+
+### @babel/polyfill默认将所有需要解析的ES6都转换成ES5，这样文件体积会增大很多，需要配置
+
+```javascript
+  options: {
+            "presets": [["@babel/preset-env",{
+                useBuiltIns: 'usage'
+              }]]
+          }
+```
+
+### 这样可以做到按需加载，用到哪个解析加载哪个
+
+### npm i @babel/plugin-transform-runtime -D

@@ -7,7 +7,7 @@ const webpack = require('webpack');
 
 module.exports = {
     mode: 'development',
-    devtool: 'inline-source-map',
+    devtool: 'cheap-module-eval-source-map',
     entry:{
         main: './src/index.js'
     },
@@ -17,48 +17,62 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     module: {
-        rules:[{
-            test: /\.(jpg|png|gif)$/,
-            use: {
-                loader: 'url-loader',
+        rules:[
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,  // 如果js文件在node_modules里就不使用babel-loader，排除掉
+                loader: "babel-loader",
                 options: {
-                    // placeholder 站位符
-                    //name: '[name].[ext]'  // 名字不变
-                    name: '[name]_[hash].[ext]',
-                    outputPath: 'images/',
-                    limit: 2048 //如果图片的大小超过了2048字节，单独打包成一个图片，小于就转化成base64
+                    presets: [["@babel/preset-env",{
+                        targets:{
+                            chrome: "67"
+                        },
+                        useBuiltIns: 'usage'
+                    }]]
                 }
-            }
-        },
-        {
-            test: /\.(eot|ttf|svg|woff)$/,
-            use: {
-                loader: 'file-loader'
-            }
-        },
-        {
-            test: /\.scss$/,
-            use: [
-                'style-loader',
-                {
-                    loader: 'css-loader',
+            },
+            {
+                test: /\.(jpg|png|gif)$/,
+                use: {
+                    loader: 'url-loader',
                     options: {
-                        importLoaders: 2
+                        // placeholder 站位符
+                        //name: '[name].[ext]'  // 名字不变
+                        name: '[name]_[hash].[ext]',
+                        outputPath: 'images/',
+                        limit: 2048 //如果图片的大小超过了2048字节，单独打包成一个图片，小于就转化成base64
                     }
-                },
-                'sass-loader',
-                'postcss-loader'
-            ]
-        },
-        {
-            test: /\.css$/,
-            use: [
-                'style-loader',  
-                'css-loader',
-                'postcss-loader'
-            ]
-        }
-    ]
+                }
+            },
+            {
+                test: /\.(eot|ttf|svg|woff)$/,
+                use: {
+                    loader: 'file-loader'
+                }
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 2
+                        }
+                    },
+                    'sass-loader',
+                    'postcss-loader'
+                ]
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',  
+                    'css-loader',
+                    'postcss-loader'
+                ]
+            }
+        ]
     },
     plugins: [
         new HtmlWebapckPlugin({
