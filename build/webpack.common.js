@@ -5,6 +5,7 @@ const webpack = require('webpack');
 
 module.exports = {
     entry:{
+        lodash: './src/lodash.js',
         main: './src/index.js'
     },
     module: {
