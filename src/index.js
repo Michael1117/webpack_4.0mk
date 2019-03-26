@@ -1,7 +1,18 @@
-import _ from 'lodash';
+function getComponent() {
+    /* return import('lodash').then(({ default: _ }) => {
+        var element = document.createElement('div');
+        element.innerHTML = _.join(['Michael', 'Hee'], '-')
+        return element
+    }) */
+    /* 魔法注释 */
+    return import('lodash').then(({ default: _ }) => {
+        var element = document.createElement('div');
+        element.innerHTML = _.join(['Michael', 'Hee'], '-')
+        return element
+    })
+}
 
-console.log(_.join(['a','b','c'], '***'))
 
-console.log(_.join(['a','b','c'], '***'))
-
-
+getComponent().then(element => {
+    document.body.appendChild(element)
+})
