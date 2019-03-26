@@ -3,6 +3,8 @@ const HtmlWebapckPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const webpack = require('webpack');
 
+
+
 module.exports = {
     mode: 'development',
     devtool: 'inline-source-map',
@@ -47,6 +49,14 @@ module.exports = {
                 'sass-loader',
                 'postcss-loader'
             ]
+        },
+        {
+            test: /\.css$/,
+            use: [
+                'style-loader',  
+                'css-loader',
+                'postcss-loader'
+            ]
         }
     ]
     },
@@ -56,9 +66,13 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         new webpack.ProgressPlugin(),
+        new webpack.HotModuleReplacementPlugin()
     ],
     devServer: {
         contentBase: './dist',
-        open: true
+        open: true,
+        port: 8080,
+        hot: true,
+        hotOnly: true 
     }
 }

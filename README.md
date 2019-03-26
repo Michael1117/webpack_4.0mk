@@ -105,3 +105,19 @@ devtool: cheap-module-source-map
 ### WebpackDevServer 提升开发效率 (需要安装)
 
 监听文件的变化，并重新打包，还能重新刷新浏览器
+
+### webpack index.js -o bundle.js
+
+### GUIDES 里的 Development
+### API 里的 Node.js API Command Line Interface
+
+
+### Hot Module Replacement
+
+### css 不需要自己配置 因为css-loader 内置了，但是JavaScript没有，需要自己配置
+
+### GUIDES 里的 Hot Module Replacement
+
+### API 里的 Hot Module Replacement
+
+### Concepts里的Hot Module Replacement实现原理
