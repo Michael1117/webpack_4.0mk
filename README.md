@@ -101,3 +101,7 @@ devtool: cheap-module-eval-source-map
 ### production 环境下
 source-map配置
 devtool: cheap-module-source-map
+
+### WebpackDevServer 提升开发效率 (需要安装)
+
+监听文件的变化，并重新打包，还能重新刷新浏览器

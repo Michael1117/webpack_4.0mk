@@ -10,6 +10,7 @@ module.exports = {
         main: './src/index.js'
     },
     output: {
+        publicPath: '/',
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist')
     },
@@ -55,5 +56,9 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         new webpack.ProgressPlugin(),
-    ]
+    ],
+    devServer: {
+        contentBase: './dist',
+        open: true
+    }
 }
