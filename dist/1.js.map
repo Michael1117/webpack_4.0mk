@@ -1,1 +1,0 @@
-{"version":3,"file":"1.js","sources":["webpack:///./src/click.js"],"sourcesContent":["function handleClick() {\r\n    var element = document.createElement('div');\r\n    element.innerHTML = \"Michael Lee\";\r\n    document.body.appendChild(element)\r\n}\r\n\r\nexport default handleClick;\r\n "],"mappings":"AAAA","sourceRoot":""}
