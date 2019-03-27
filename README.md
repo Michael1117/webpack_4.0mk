@@ -285,7 +285,7 @@ module.exports = {
   //...
   optimization: {
     splitChunks: {
-      chunks: 'all',  // all:表示同步和异步都做分割 async:异步代码代码分割 initial表示同步
+      chunks: 'all',  // all:表示同步和异步都做分割 async:异步代码代码分割 initial表示同步 默认async
       minSize: 30000,  //大于30000字节才做代码分割  30kb
       maxSize: 0,
       minChunks: 1, // 当一个模块至少引入了多少次的时候 才进行分割
@@ -340,3 +340,9 @@ cacheGroups: {
 
 
  ### (https://github.com/webpack/analyse)
+
+ ### webpack --profile --json > stats.json
+
+ 多出来一个stats.json
+
+ ### https://webpack.github.io/analyse/

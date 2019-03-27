@@ -62,7 +62,7 @@ module.exports = {
     ],
     optimization: {
         splitChunks: {
-        
+            
         }
     },
     output: {
