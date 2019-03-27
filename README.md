@@ -353,4 +353,5 @@ cacheGroups: {
  ### 缓存带来的性能提升是非常有限的，我们应该考虑的是怎样让代码的利用率更高，交互之后才用到的代码，完全可以写在异步组件里去，通过懒加载的形式去把代码逻辑加载进来，这样可以是代码性能得到较大的提升，页面访问速度会更快，更多的关注code Coverage，代码覆盖率上来。
 
 
- ### CSS 文件的代码分割
+ ### CSS 文件的代码分割  npm i mini-css-extract-plugin -D
+ MiniCssExtractPlugin 

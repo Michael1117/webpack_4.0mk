@@ -29,28 +29,6 @@ module.exports = {
                 use: {
                     loader: 'file-loader'
                 }
-            },
-            {
-                test: /\.scss$/,
-                use: [
-                    'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            importLoaders: 2
-                        }
-                    },
-                    'sass-loader',
-                    'postcss-loader'
-                ]
-            },
-            {
-                test: /\.css$/,
-                use: [
-                    'style-loader',  
-                    'css-loader',
-                    'postcss-loader'
-                ]
             }
         ]
     },
@@ -61,6 +39,7 @@ module.exports = {
         new CleanWebpackPlugin()
     ],
     optimization: {
+        usedExports: true,
         splitChunks: {
             chunks: 'all'
         }
