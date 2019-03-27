@@ -360,4 +360,25 @@ cacheGroups: {
 
  ### npm i optimize-css-assets-webpack-plugin -D
 
- ### Content Hash
+ ### contenthash 
+
+```javascript
+ optimization: {
+        runtimeChunk: {
+            name: 'runtime'  // 新版本可以配置也可以不配置
+        },
+        usedExports: true,
+        splitChunks: {
+            chunks: 'all',
+            cacheGroups: {
+                vendors: {
+                    test: /[\\/]node_modules[\\/]/, 
+                    priority: -10,
+                    name: 'vendors'
+                }
+            }
+        }
+    },
+```
+
+// manifest存在于main.js中 也存在于vendors中 03:04:40

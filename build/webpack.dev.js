@@ -40,6 +40,10 @@ const devConfig = {
         open: true,
         port: 8080,
         hot: true
+    },
+    output: {
+        filename: '[name].js',
+        chunkFilename: '[name].js',
     }
 }
 

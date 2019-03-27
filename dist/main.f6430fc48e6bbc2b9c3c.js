@@ -166,7 +166,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const dom = jquery__WEBPACK_IMPORTED_MODULE_1___default()('<div>');
-dom.html(lodash__WEBPACK_IMPORTED_MODULE_0___default.a.join(['Michael', 'hee']), ' ');
+dom.html(lodash__WEBPACK_IMPORTED_MODULE_0___default.a.join(['Michael', 'hello']), '----');
 jquery__WEBPACK_IMPORTED_MODULE_1___default()('body').append(dom);
 
 /***/ })

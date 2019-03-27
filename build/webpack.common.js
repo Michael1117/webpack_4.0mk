@@ -39,6 +39,9 @@ module.exports = {
         new CleanWebpackPlugin()
     ],
     optimization: {
+        runtimeChunk: {
+            name: 'runtime'
+        },
         usedExports: true,
         splitChunks: {
             chunks: 'all',
@@ -53,8 +56,6 @@ module.exports = {
     },
     performance: false,
     output: {
-        filename: '[name].js',
-        chunkFilename: '[name].chunk.js',
         path: path.resolve(__dirname, '../dist')
     },
 }
