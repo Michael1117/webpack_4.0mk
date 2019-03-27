@@ -73,7 +73,7 @@ const commonConfig = {
 }
 
 module.exports = (env) => {
-    if(env && env.production) {  // 线上环境
+    if(env && env.production === 'abc') {  // 线上环境
         return merge(commonConfig, prodConfig)
     }else{ // 开发环境
         return merge(commonConfig, devConfig)
