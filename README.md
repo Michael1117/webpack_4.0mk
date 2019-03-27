@@ -382,3 +382,5 @@ cacheGroups: {
 ```
 
 // manifest存在于main.js中 也存在于vendors中 03:04:40
+
+### Shimming  代码的兼容 | 打包的兼容

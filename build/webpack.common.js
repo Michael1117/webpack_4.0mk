@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebapckPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const webpack = require('webpack')
 
 module.exports = {
     entry:{
@@ -36,7 +37,11 @@ module.exports = {
         new HtmlWebapckPlugin({
             template: 'src/index.html'
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new webpack.ProvidePlugin({
+            $: 'jquery',  // 当发现某个文件中出现$ ,就自动引入jquery
+            _join: ['lodash', 'join']
+        })
     ],
     optimization: {
         runtimeChunk: {
