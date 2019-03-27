@@ -4,9 +4,11 @@
               "targets": {
                 "chrome": "67"
               },
-             "useBuiltIns": "usage" 
+              "useBuiltIns": "entry",
+              "corejs": "3",
             }
-        ],
+              
+        ],  
         "@babel/preset-react"
     ],
     "plugins": ["@babel/plugin-syntax-dynamic-import"]

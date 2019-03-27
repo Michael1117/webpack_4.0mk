@@ -280,25 +280,26 @@ webpack中实现代码分割，两种方式
 ```javascript
 webpack.config.js
 
+// 当加载一个同步代码的时候，代码会走到cacheGroups/vendors中，如果是node_modules中的包，webpack会做代码分割，打包之后的名字会形成一个新的文件vendors.js
 module.exports = {
   //...
   optimization: {
     splitChunks: {
-      chunks: 'async',  // 异步代码做代码分割
-      minSize: 30000,  //大于30000字节才做代码分割
+      chunks: 'all',  // all:表示同步和异步都做分割 async:异步代码代码分割 initial表示同步
+      minSize: 30000,  //大于30000字节才做代码分割  30kb
       maxSize: 0,
-      minChunks: 1,
-      maxAsyncRequests: 5,
-      maxInitialRequests: 3,
-      automaticNameDelimiter: '~',
-      name: true,
+      minChunks: 1, // 当一个模块至少引入了多少次的时候 才进行分割
+      maxAsyncRequests: 5,  // 同时加载的请求数 5 个
+      maxInitialRequests: 3,  // 首页加载的时候
+      automaticNameDelimiter: '~',  // 文件生成的时候 文件中的分割符  verdors~main.js
+      name: true,   // 
       cacheGroups: {
         vendors: {
-          test: /[\\/]node_modules[\\/]/,
-          priority: -10
+          test: /[\\/]node_modules[\\/]/,  // 库是否是在node_modules下，是就不打包
+          priority: -10,
+          filename: 'vendors.js'
         },
         default: {
-          minChunks: 2,
           priority: -20,
           reuseExistingChunk: true
         }
@@ -308,3 +309,26 @@ module.exports = {
 };
 
 ```
+
+### chunks: ['async'| 'initial'] 时， 当引入同步的代码(库)的时候，webpack知道该为同步的代码(库)进行打包，这时候会走到cacheGroups中，有一个vendors项，里面有一个test，test: /[\\/]node_modules[\\/]/,  // 库是否是在node_modules下，是就不打包
+
+### 如果引入的是node_modules里的包的话，那么会走cacheGroups里的vendors，如果是自己定义的包的话，那么会走cacheGroups里的default
+
+```javascript
+cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,  // 库是否是在node_modules下，是就不打包
+          priority: -10,
+          filename: 'vendors.js'
+        },
+        default: {
+          priority: -20,
+          reuseExistingChunk: true
+        }
+      }
+```
+
+
+ priority: -10优先级大于 priority: -20,
+
+ ### Lazy Loading 连加载 ，Chunk

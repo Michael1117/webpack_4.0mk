@@ -1,18 +1,11 @@
-function getComponent() {
-    /* return import('lodash').then(({ default: _ }) => {
-        var element = document.createElement('div');
-        element.innerHTML = _.join(['Michael', 'Hee'], '-')
-        return element
-    }) */
-    /* 魔法注释 */
-    return import(/* webpackChunkName:"lodash" */'lodash').then(({ default: _ }) => {
-        var element = document.createElement('div');
-        element.innerHTML = _.join(['Michael', 'Hee'], '-')
-        return element
-    })
-}
+//import test from './test.js'
+//import _ from 'lodash'
+//import jquery from 'jquery'
+//console.log(test.name) 
 
+/* import _ from 'lodash'
 
-getComponent().then(element => {
-    document.body.appendChild(element)
-})
+console.log(_) */
+
+import a from 'a';
+import b from 'b'
