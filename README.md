@@ -332,3 +332,11 @@ cacheGroups: {
  priority: -10优先级大于 priority: -20,
 
  ### Lazy Loading 连加载 ，Chunk
+
+ ### 项目打包完成后，dist文件夹下有几个文件，就是几个chunks
+
+
+ ### 打包分析 Preloading Prefetching
+
+
+ ### (https://github.com/webpack/analyse)
