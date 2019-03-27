@@ -1,7 +1,9 @@
 {
   "name": "webpack_4.0mk",
   "version": "1.0.0",
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "description": "webpack",
   "main": "index.js",
   "scripts": {
@@ -37,6 +39,7 @@
     "lodash": "^4.17.11",
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.11.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",

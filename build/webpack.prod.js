@@ -1,3 +1,4 @@
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const merge = require('webpack-merge');
 const commonConfig = require('./webpack.common.js')
@@ -31,8 +32,14 @@ const prodConfig = {
             }
         ]
     },
+    optimization: {
+        minimizer: [new OptimizeCSSAssetsPlugin({})]
+    },
     plugins: [
-        new MiniCssExtractPlugin({})
+        new MiniCssExtractPlugin({
+            filename: '[name].css',
+            chunkFilename: '[name].chunk.css'
+        })
     ]
 }
 
