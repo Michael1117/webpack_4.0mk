@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],[,function(e,n,c){"use strict";c.r(n),n.default=function(){var e=document.createElement("div");e.innerHTML="Michael Lee",document.body.appendChild(e)}}]]);
+//# sourceMappingURL=1.js.map

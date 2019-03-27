@@ -346,3 +346,5 @@ cacheGroups: {
  多出来一个stats.json
 
  ### https://webpack.github.io/analyse/
+
+ ### ctrl+shift+p  输入 Coverage
