@@ -2,8 +2,11 @@ const path = require('path')
 const HtmlWebapckPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const webpack = require('webpack')
+const merge = require('webpack-merge');
+const devConfig = require('./webpack.dev.js');
+const prodConfig = require('./webpack.prod.js')
 
-module.exports = {
+const commonConfig = {
     entry:{
         main: './src/index.js',
     },
@@ -67,4 +70,12 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, '../dist')
     },
+}
+
+module.exports = (env) => {
+    if(env && env.production) {  // 线上环境
+        return merge(commonConfig, prodConfig)
+    }else{ // 开发环境
+        return merge(commonConfig, devConfig)
+    }
 }
