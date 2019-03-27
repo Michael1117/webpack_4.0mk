@@ -5,7 +5,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 module.exports = {
     entry:{
         main: './src/index.js',
-        main1: './src/index1.js'
     },
     module: {
         rules:[
@@ -42,9 +41,17 @@ module.exports = {
     optimization: {
         usedExports: true,
         splitChunks: {
-            chunks: 'all'
+            chunks: 'all',
+            cacheGroups: {
+                vendors: {
+                    test: /[\\/]node_modules[\\/]/, 
+                    priority: -10,
+                    name: 'vendors'
+                }
+            }
         }
     },
+    performance: false,
     output: {
         filename: '[name].js',
         chunkFilename: '[name].chunk.js',

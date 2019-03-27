@@ -359,3 +359,5 @@ cacheGroups: {
  ### 一定要注意tree Shaking
 
  ### npm i optimize-css-assets-webpack-plugin -D
+
+ ### Content Hash
