@@ -401,3 +401,5 @@ cacheGroups: {
 ## 1:26
 
 ## proxy 只能在webpack-dev-server环境下有效
+
+## historyApiFallback 单页应用  只在开发环境有效，线上需要依靠后端来配置

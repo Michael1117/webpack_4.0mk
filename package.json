@@ -49,6 +49,7 @@
     "@babel/runtime-corejs2": "^7.4.2",
     "core-js": "^3.0.0",
     "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "react-dom": "^16.8.5",
+    "react-router-dom": "^5.0.0"
   }
 }

@@ -82,6 +82,7 @@ module.exports = {
         port: 8080,
         hot: true,
         hotOnly: true ,
+        historyApiFallback: true,
         proxy: {
             '/react/api' : {
                 target: 'https://www.dell-lee.com',
