@@ -405,3 +405,5 @@ cacheGroups: {
 ## historyApiFallback 单页应用  只在开发环境有效，线上需要依靠后端来配置
 
 ## npx eslint --init
+
+## npx eslint src
