@@ -1,15 +1,10 @@
 {
   "name": "webpack_4.0mk",
   "version": "1.0.0",
-  "sideEffects": [
-    "*.css"
-  ],
   "description": "webpack",
   "main": "index.js",
   "scripts": {
-    "start": "http-server dist",
-    "dev": "webpack-dev-server --config ./build/webpack.common.js",
-    "build": "webpack --config ./build/webpack.prod.js"
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -30,6 +25,7 @@
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
     "autoprefixer": "^9.5.0",
+    "axios": "^0.18.0",
     "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^2.0.1",
     "css-loader": "^2.1.1",

@@ -397,3 +397,7 @@ cacheGroups: {
 // 线上环境 sourceMap 不是那么重要，要压缩，
 
 ## Library
+
+## 1:26
+
+## proxy 只能在webpack-dev-server环境下有效

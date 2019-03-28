@@ -1,12 +1,19 @@
-console.log('hello, my name is Michael')
 
-if('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js').
-        then(registration => {
-            console.log('Service-worker registed')
-        }).catch(error => {
-            console.log('service-worker register error')
+import React , {Component} from 'react';
+
+import ReactDOM from 'react-dom';
+import axios from 'axios'
+
+class App extends Component{
+    componentDidMount() {
+        axios.get('/react/api/header.json').then((res) => {
+            console.log(res)
         })
-    })
+    }
+
+    render() {
+        return <div>Hello World</div>
+    }
 }
+
+ReactDOM.render(<App/>, document.getElementById('root'))
