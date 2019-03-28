@@ -9,7 +9,7 @@
   "scripts": {
     "start": "http-server dist",
     "dev": "webpack-dev-server --config ./build/webpack.common.js",
-    "build": "webpack --env.production --config ./build/webpack.common.js"
+    "build": "webpack --config ./build/webpack.prod.js"
   },
   "repository": {
     "type": "git",

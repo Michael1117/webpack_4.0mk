@@ -2,11 +2,7 @@ const path = require('path')
 const HtmlWebapckPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
-const merge = require('webpack-merge');
-const devConfig = require('./webpack.dev.js');
-const prodConfig = require('./webpack.prod.js')
-
-const commonConfig = {
+module.exports = {
     entry:{
         main: './src/index.js',
     },
@@ -15,9 +11,7 @@ const commonConfig = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,  
-                use: [{
-                    loader: 'babel-loader'
-                }]
+                loader: "babel-loader"
             },
             {
                 test: /\.(jpg|png|gif)$/,
@@ -64,12 +58,4 @@ const commonConfig = {
     output: {
         path: path.resolve(__dirname, '../dist')
     },
-}
-
-module.exports = (env) => {
-    if(env && env.production === 'abc') {  // 线上环境
-        return merge(commonConfig, prodConfig)
-    }else{ // 开发环境
-        return merge(commonConfig, devConfig)
-    }
 }
