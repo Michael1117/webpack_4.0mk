@@ -390,3 +390,10 @@ cacheGroups: {
 ### Guides
 
 ## 环境变量的使用
+
+## Development 和 Production模式的区分打包
+
+// 开发环境中 sourceMap是非常全的，快速定位到问题， 不要压缩，
+// 线上环境 sourceMap 不是那么重要，要压缩，
+
+## Library
