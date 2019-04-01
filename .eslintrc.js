@@ -20,5 +20,14 @@ module.exports = {
     'react',
   ],
   rules: {
+    "react/prefer-stateless-function" : 0,
+    "react/jsx-filename-extension": 0,
+    "space-before-blocks": 0,
+    "linebreak-style": 0,
+    "comma-dangle": 0
+
   },
+  globals: {
+    document: false
+  }
 };
