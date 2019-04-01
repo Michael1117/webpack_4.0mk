@@ -408,3 +408,19 @@ cacheGroups: {
 ## npx eslint src
 
 ### npm i babel-eslint -D
+
+## force: 'pre' 改变loader 执行顺序
+
+## git 钩子 eslint src
+
+## 优化 
+
+1. 跟上技术的迭代 (Node, Npm, Yarn)
+2. 在尽可能少的模块上应用Loader
+3. Plugin尽可能精简 并确保可靠
+
+extensions  ['.js', '.jsx', '.jpg']
+mainFiles
+alias
+
+## 5-10 使用DIIPlugin提高打包速度

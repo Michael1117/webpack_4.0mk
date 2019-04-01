@@ -19,7 +19,12 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: ['babel-loader', 'eslint-loader'],
+        loader: ['babel-loader', {
+          loader: 'eslint-loader',
+          options: {
+            fix: true
+          }
+        }]
       },
       {
         test: /\.(jpg|png|gif)$/,
